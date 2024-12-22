@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stress Levels and Coping Mechanisms</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            font-size: 1rem;
+            overflow-x: hidden;
+        }
+           
+        .hhi {
+            
+            background: whitesmoke;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            height: 100px;
+        }
+
+        .hhi h1 {
+            font-size: 2.5rem;
+            position: relative;
+            top:-80px;
+            color:#4CAF50;
+        }
+        .hhi img{
+            position: relative;
+            top: -5px;
+            left: -560px;
+
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+            padding: 0.5rem 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+        }
+
+        nav a:hover {
+            background: #555;
+            border-radius: 5px;
+        }
+
+        header {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            transition: background 1s ease;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            animation: fadeIn 2s ease-in-out 0.5s;
+        }
+
+        header .cta-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+            animation: bounceIn 2s ease-out 1s;
+        }
+
+        header .cta-button:hover {
+            background-color: #45a049;
+        }
+       
+         .home{
+           
+            height: 300px;
+         }
+         .home1{
+            
+            height: 800px;
+         }
+         
+         
+
+        section {
+            
+            padding: 60px 20px;
+            text-align: center;
+            margin-bottom: 60px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-in-out forwards;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #4CAF50;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .stress-graph {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .stress-graph div {
+            width: 250px;
+            background-color: #ff6b6b;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            animation: fadeInUp 1.5s ease-in-out forwards;
+        }
+
+        .stress-graph div h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .stress-graph div p {
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .stress-graph div:hover {
+            transform: translateY(-10px);
+        }
+
+        .coping-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .coping-cards .card {
+            background-color: #61ffe5;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 2s ease-in-out forwards;
+        }
+
+        .coping-cards .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .coping-cards .card h3 {
+            color: #af4c82;
+            margin-bottom: 15px;
+        }
+
+        .coping-cards .card p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .stress-slider {
+            height: 300px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .stress-slider input {
+            width: 80%;
+            max-width: 600px;
+            margin: 20px 0;
+        }
+
+        .stress-slider span {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .survey-photo-section {
+            
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .survey-photo-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #4CAF50;
+        }
+
+        .survey-photo-section .photos {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .survey-photo-section .photo {
+            width: 400px;
+            height: 300px;
+            background-color: #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .survey-photo-section .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .survey-photos-section .photos img:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .quiz-section {
+            background-color:#d2cccc;
+            padding: 50px 20px;
+            border-radius: 8px;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .quiz-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #4CAF50;
+        }
+
+        .quiz-section .question {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .quiz-section .options {
+            margin-bottom: 20px;
+        }
+
+        .quiz-section button {
+            background-color: #4CAF50;
+            color: #efc0c0;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .quiz-section button:hover {
+            background-color: #45a049;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 60%;
+            text-align: center;
+        }
+
+        .modal-content h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .modal-content p {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .close {
+            background-color: red;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0);
+            }
+            60% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hhi">
+        <img src="gistedu_logo-removebg-preview.png" alt="" width="80" height="80">
+        <h1>Geethanjali Institute of Science and Technology</h1>
+    </div>
+        
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#Aboutp">About Project</a>
+        <a href="#surveyphoto">Survey Photo</a>
+        <a href="#check">Check Stress Levels</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header>
+        <div>
+            <h1>Understanding Stress & Coping Mechanisms</h1>
+            <p>Learn to manage stress effectively and improve your well-being</p>
+            <button class="cta-button" onclick="openModal()">Get Stress Management Tips</button>
+        </div>
+    </header>
+
+    <section id="Aboutp">
+    <!-- Stress Info Section -->
+    <section class="home">
+        <h2>What is Stress?</h2><br>
+        <p>Stress is a natural physical and mental response to life experiences. It’s a feeling of being under too much mental or emotional pressure. In small doses, stress can be beneficial, motivating us to perform under pressure and meet deadlines. However, excessive stress can have a significant impact on your health and well-being.</p>
+    </section>
+
+    <!-- Stress Levels Graph Section -->
+    <section class="home" id="log">
+        <h2>Understanding Stress Levels</h2>
+        <div class="stress-graph">
+            <div>
+                <h3>Physical Stress</h3>
+                <p>30%</p>
+            </div>
+            <div>
+                <h3>Mental Stress</h3>
+                <p>40%</p>
+            </div>
+            <div>
+                <h3>Chronic Stress</h3>
+                <p>30%</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coping Mechanisms Section -->
+    <section class="home">
+        <h2>Coping Mechanisms</h2>
+        <div class="coping-cards">
+            <div class="card">
+                <h3>Exercise</h3>
+                <p>Physical activity releases endorphins, helping to reduce stress and improve mood.</p>
+            </div>
+            <div class="card">
+                <h3>Mindfulness</h3>
+                <p>Practicing mindfulness through meditation helps calm the mind and reduce stress.</p>
+            </div>
+            <div class="card">
+                <h3>Time Management</h3>
+                <p>Good time management can prevent stress caused by deadlines and workload.</p>
+            </div>
+        </div>
+    </section>
+</section>
+<div class="home1">
+   <section id="surveyphoto">
+    <section class="survey-photo-section">
+        <h2>Survey: Photos</h2>
+        <div class="photos">
+            <div class="photo">
+                <img src="stress_photo5.jpg" alt="Stress Image 1">
+            </div>
+            <div class="photo">
+                <img src="stress_photo2.jpg" alt="Stress Image 2">
+            </div>
+            <div class="photo">
+                <img src="stress_photo4.jpg" alt="Stress Image 3">
+            </div>
+            <div class="photo">
+                <img src="stress_photo1.jpg" alt="Stress Image 1">
+            </div>
+            
+        </div>
+    </section>
+</section>
+</div>
+<div class="home2">
+ <section id="check" >
+    <!-- Stress Slider -->
+     <div class="home2">
+        <section class="stress-slider">
+        <h2>Test Your Stress Level</h2>
+        <input type="range" min="0" max="100" value="50" id="stressRange" oninput="updateStressLevel()">
+        <span id="stressLevel">50</span>%
+    </section>
+</div>
+    <!-- Quiz Section -->
+    <section class="quiz-section">
+        <h2>What's Your Stress Level?</h2>
+        <div class="question">How often do you feel stressed during your day?</div>
+        <div class="options">
+            <button onclick="alert('You are managing stress well!')">Rarely</button>
+            <button onclick="alert('Consider adopting some coping strategies.')">Sometimes</button>
+            <button onclick="alert('It might be helpful to take a break or seek help.')">Often</button>
+        </div>
+    </section>
+
+    
+</section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 SK.Abdul Rehaman. All rights reserved.</p>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="tipsModal">
+        <div class="modal-content">
+            <h3>Stress Management Tips</h3>
+            <p>1. Practice deep breathing exercises.</p>
+            <p>2. Take breaks and spend time outdoors.</p>
+            <p>3. Talk to someone you trust.</p>
+            <button class="close" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Update the stress level
+        function updateStressLevel() {
+            let sliderValue = document.getElementById('stressRange').value;
+            document.getElementById('stressLevel').textContent = sliderValue;
+        }
+
+        // Modal open and close functions
+        function openModal() {
+            document.getElementById('tipsModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('tipsModal').style.display = 'none';
+        }
+
+        // Scroll animation effect for sections
+        const sections = document.querySelectorAll('section');
+        window.addEventListener('scroll', () => {
+            sections.forEach(section => {
+                if (section.getBoundingClientRect().top < window.innerHeight) {
+                    section.style.opacity = 1;
+                }
+            });
+        });
+
+        // Change header background on scroll
+        window.onscroll = function() {
+            if (window.scrollY > 50) {
+                document.querySelector('header').style.background = 'linear-gradient(45deg, #42f5c5, #ffeb3b)';
+            } else {
+                document.querySelector('header').style.background = 'linear-gradient(45deg, #ff6b6b, #feca57)';
+            }
+        }
+    </script>
+
+</body>
+</html>
